@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="835.0" prefWidth="1277.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="com.example.demo17.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <Label text="SISTEMA DE LOCAÇÃO DE VEÍCULOS" />
+      <TextField fx:id="idNomeCliente" promptText="Nome do Cliente" />
+      <TextField fx:id="idCpfCliente" promptText="CPF do Cliente" />
+      <Label text="Tipo de Veículo" />
+      <HBox alignment="CENTER" prefHeight="28.0" prefWidth="1222.0">
+         <children>
+            <RadioButton fx:id="idBicicletaConvencional" mnemonicParsing="false" text="Bicicleta Convencional">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupTipoVeiculo" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="idBicicletaEletrica" mnemonicParsing="false" text="Bicicleta Elétrica" toggleGroup="$groupTipoVeiculo" />
+            <RadioButton fx:id="idPatineteEletrico" mnemonicParsing="false" text="Patinete Elétrico" toggleGroup="$groupTipoVeiculo" />
+         </children>
+      </HBox>
+      <TextField fx:id="idTempoLocacao" promptText="Tempo de locação em minutos" />
+      <Label text="Situação da Demanda" />
+      <HBox alignment="CENTER" prefHeight="23.0" prefWidth="1224.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="Normal">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupSituacaoDemanda" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="Alta" toggleGroup="$groupSituacaoDemanda" />
+            <RadioButton mnemonicParsing="false" text="Baixa" toggleGroup="$groupSituacaoDemanda" />
+         </children>
+      </HBox>
+      <TextField fx:id="idPercentualBateria" promptText="Percentual de Bateria" />
+      <TextField fx:id="idCupomDesconto" promptText="Cupom de Desconto" />
+      <Button fx:id="idCalcularLocacao" mnemonicParsing="false" text="Calcular Locação" />
+      <TextArea fx:id="idResultado" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</VBox>
